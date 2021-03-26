@@ -14,15 +14,13 @@ table.list{
     border-collapse: collapse;
 }
 table.list tr{
-    height: 50px;
+    height: 100%;
+    width: 100%;
 }
 table.list td{
-    #border: 1px solid #000000
+    border: 1px solid #000000;
     padding: 10px
 }
 table.list tr:nth-child(even){
     background-color: #F2F2F2;
-}
-table.detalhes{
-    width: 80%;
 }
