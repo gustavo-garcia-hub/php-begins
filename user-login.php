@@ -23,8 +23,8 @@
                 }else{
                     echo"dados passados";
                 }
-
+            ?>
         </div>
         <?php $conexao->close();?>
-</body>
+        </body>
 </html>
