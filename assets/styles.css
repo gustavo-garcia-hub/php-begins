@@ -1,12 +1,32 @@
-body{
-    font-family: 'Poppins';
-    background-color: #FFFFFF;  
+*{
+    font-family: 'Poppins', 'Sans-serif';
+    box-sizing: border-box;
 }
-div#body{
-    width: 1200px;
+body{
+    width: 95%;
     margin: auto;
     padding: 20px;
     box-shadow: 0px 0px 20px #777777;
+}
+form.busca{
+    font-size: 12px;
+    text-align: right;
+}
+a:link {
+    color:black;
+    text-decoration: none;
+}
+a:visited {
+    color:#0000;
+    text-decoration: none;
+}
+a:hover {
+    color: #FF0000;;
+    text-decoration: none;
+}  
+a:active {
+    color: #000000;
+    text-decoration: none;
 }
 table.list{
     width: 100%;

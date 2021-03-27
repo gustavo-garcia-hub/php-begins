@@ -12,12 +12,26 @@
     <?php
         require_once "includes\conexao.php";
         require_once "header.php";
+        $chave = $_GET['h'] ?? "";
     ?>
-    <div id="body">
+    <div class="body">
+    <?php include_once "header.php"; ?>
         <h2>ORÇAMENTOS</h2>
+        <form method="get" class="busca" action="index.php">
+            <p><strong>BUSCAR: </strong><input type="text" name="h" size="30" maxlenght="40"/>
+            <input type="submit" value="Simbol"></p>
+            <strong>ORDENAR POR:</strong> 
+            <a href="index.php">ÚLTIMA MODIFICAÇÃO</a> | <a href="index.php">TIPO DE ORDEM</a>
+        </form>
+        <p></p>
         <table class="list">
             <?php
                 $q = "SELECT p.cod, p.descricao, s.ordem, p.valor, p.dia FROM price p JOIN services s on p.services  = s.cod";
+
+                if(!empty($chave)){
+                    $q .= "WHERE p.descricao LIKE '%$chave%' ";
+                }
+
                 $busca = $conexao->query($q);
                 if(!$busca){
                     echo "<tr><td>BUSCA NÃO RETORNOU RESULTADOS";
@@ -27,12 +41,13 @@
                     }else{
                         while($reg=$busca->fetch_object()){
                             $time = strtotime($reg->dia);
-                            $myFormat = date("d-m-Y G:i", $time);
+                            $myFormat = date("d-m-Y", $time);
+                            $mytime = date("G:i", $time);
                             echo "<tr><td>$reg->descricao";
-                            echo "<td>$reg->ordem";
                             echo "<td>R$ $reg->valor";
-                            echo "<td>$myFormat";
-                            echo "<td>adm";
+                            echo "<td>MODIFICADO EM $myFormat ÀS $mytime";
+                            echo "<td><strong>$reg->ordem</strong>";
+                            echo "<td>icons";
                         }   
                     }
                 }
