@@ -5,3 +5,4 @@ if(empty($_SESSION['user'])){
 }else{
     echo "Olá, " .$_SESSION['nome'];
 }
+echo "</p>";

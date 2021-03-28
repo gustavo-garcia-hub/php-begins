@@ -10,13 +10,15 @@
 </head>
 <body>
     <?php
-        require_once "includes\conexao.php";
-        require_once "header.php";
-        $chave = $_GET['h'] ?? "";
+        require_once "includes/conexao.php";
+        require_once "includes/login.php";
+        require_once "includes/functions.php";
     ?>
     <div class="body">
     <?php include_once "header.php"; ?>
         <h2>ORÇAMENTOS</h2>
+        <?php echo msg_sucesso(' Cê é gente boa ein');
+        ?>
         <form method="get" class="busca" action="index.php">
             <p><strong>BUSCAR: </strong><input type="text" name="h" size="30" maxlenght="40"/>
             <input type="submit" value="Simbol"></p>

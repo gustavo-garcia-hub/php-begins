@@ -1,7 +1,8 @@
 <form action="user-login.php" method="post">
+    <h4>ACESSE A PLATAFORMA</h4>
     <table>
-        <tr><td>Usuário: <td><input type="text" name="usuario" id="usuario">
-        <tr><td>senha: <td><input type="password" name="senha" id="senha">
-        <tr><td><input type="submit" value="entrar">
+        <tr><td>USUÁRIO: <td><input type="text" placeholder="usuário" name="usuario" id="usuario" size="10" maxlenght="10">
+        <tr><td>SENHA: <td><input type="password" placeholder="senha" name="senha" id="senha" size="8" maxlenght="8">
+        <tr><td><input type="submit" value="ACESSAR">
     </table>
 </form>

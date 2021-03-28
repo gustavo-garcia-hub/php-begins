@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-        require_once "includes\conexao.php";
-        require_once "includes\functions.php";
-        require_once "includes\login.php"
+        require_once "includes/conexao.php";
+        require_once "includes/functions.php";
+        require_once "includes/login.php";
 ?>
 <head>
     <meta charset="UTF-8">
-    <title>???</title>
     <link rel="stylesheet" href="assets\styles.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>LOGIN</title>
+    <style>
+        body{
+            width: 300px;
+            font-size: 20px
+        }
+        table{
+            padding: 5px
+        }
+    </style>
 </head>
 <body>
         <div id="body">
