@@ -1,2 +1,2 @@
 # php-begins
-Integração MYSQL com PHP. Atividades pressupostas pelo coordenador.
+Integração PHP com MYSQL. Atividades pressupostas pelo coordenador.
