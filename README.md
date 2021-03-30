@@ -1,2 +1,2 @@
 # php-begins
- códigos em PHP
+Integração MYSQL com PHP. Atividades pressupostas pelo coordenador.
