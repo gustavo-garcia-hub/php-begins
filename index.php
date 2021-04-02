@@ -17,8 +17,6 @@
     <div class="body">
     <?php include_once "header.php"; ?>
         <h2>ORÇAMENTOS</h2>
-        <?php echo msg_sucesso(' Cê é gente boa ein');
-        ?>
         <form method="get" class="busca" action="index.php">
             <p><strong>BUSCAR: </strong><input type="text" name="h" size="30" maxlenght="40"/>
             <input type="submit" value="Simbol"></p>
@@ -29,11 +27,9 @@
         <table class="list">
             <?php
                 $q = "SELECT p.cod, p.descricao, s.ordem, p.valor, p.dia FROM price p JOIN services s on p.services  = s.cod";
-
                 if(!empty($chave)){
                     $q .= "WHERE p.descricao LIKE '%$chave%' ";
                 }
-
                 $busca = $conexao->query($q);
                 if(!$busca){
                     echo "<tr><td>BUSCA NÃO RETORNOU RESULTADOS";
@@ -49,7 +45,14 @@
                             echo "<td>R$ $reg->valor";
                             echo "<td>MODIFICADO EM $myFormat ÀS $mytime";
                             echo "<td><strong>$reg->ordem</strong>";
-                            echo "<td>icons";
+                            if(is_admin()){
+                                echo "<td><i class='material-icons'>add_circle</i> ";
+                                echo "<i class='material-icons'>edit</i> ";
+                                echo "<i class='material-icons'>delete</i> ";
+                            } else if (is_editor()){
+                                echo "<td>";
+                                echo "<i class='material-icons'>edit</i> ";
+                            }
                         }   
                     }
                 }
